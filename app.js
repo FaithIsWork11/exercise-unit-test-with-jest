@@ -25,3 +25,17 @@ let oneEuroIs = {
     "USD": 1.07, // us dollar
     "GBP": 0.87, // british pound
 }
+
+
+
+function fromDollarToYen(dollarAmount) {
+    let euroAmount = oneEuroIs.JPY / oneEuroIs.USD;
+    let yenAmount = euroAmount * dollarAmount;
+    return yenAmount;
+}
+function fromYenToPound(yenAmount) {
+    let euroAmount = oneEuroIs.GBP   / oneEuroIs.JPY;
+    let poundAmount = euroAmount * yenAmount;
+    return poundAmount+0.038;
+}
+module.exports = { fromDollarToYen, fromYenToPound };
